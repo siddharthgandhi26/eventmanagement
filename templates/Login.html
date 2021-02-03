@@ -1,0 +1,39 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+</head>
+<body style="background-image: url('{% static 'images/bg.png' %}');">
+    <form method="post">
+        {% csrf_token %}
+        <div class="container" style="margin-top: 100px;">
+        <table align="center">
+            <tr>
+                <th colspan="2" style="font-size: 40px; font-family: 'Kristen ITC';">Admin Login</th>
+            </tr>
+            <tr>
+                <td style="font-size: 30px; font-family: 'Calibri Light'">User Name:</td>
+                <td>
+                    <input style="width: 400px; height: 20px;" type="text" name="username"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size: 30px; font-family: 'Calibri Light'">Password:</td>
+                <td>
+                    <input style="width: 400px; height: 20px;" type="password" name="password"/>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input style="height: 30px; width: 80px; font-size: 15px;" type="submit" value="Log In"/>
+                    <input style="height: 30px; width: 80px; font-size: 15px;" type="reset" value="Cancel"/>
+                </td>
+            </tr>
+        </table>
+     </div>
+    </form>
+</body>
+</html>

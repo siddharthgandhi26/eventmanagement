@@ -1,0 +1,92 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}"/>
+    <script type="text/javascript" language="javascript" src="{% static 'js/bootstrap.min.js' %}">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-image: url('{% static 'images/bg.png' %}');">
+    <div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" style="height: 50px">
+        <a class="navbar-brand" href="#" style="margin-left: 40px;">
+
+        </a>
+        <ul class="navbar" role="tablist">
+            <li class="nav-item" style="font-size: 20px; margin-left: 40px;">
+                <a class="nav-link " href="{% url 'home' %}"style="color: white; font-size: 30px; font-family: 'Curlz MT'">FOX EVE</a>
+            </li>
+            <li class="nav-item" style="font-size: 20px; margin-left: 150px;">
+                <a class="nav-link " href="{% url 'home' %}"style="color: white; font-size: 20px; margin-top: 10px; font-family: 'Kristen ITC';">Home</a>
+            </li>
+            <li class="nav-item" style="font-size: 20px; margin-left: 60px;">
+                <a class="nav-link" href="{% url 'gallery' %}"style="color: white; font-size: 20px; margin-top: 10px; font-family: 'Kristen ITC';">Gallery</a>
+            </li>
+            <li class="nav-item" style="font-size: 20px; margin-left: 60px;">
+                <a class="nav-link" href="{% url 'home' %}"style="color: white; font-size: 20px; margin-top: 10px; font-family: 'Kristen ITC';">Events</a>
+            </li>
+            <li class="nav-item" style="font-size: 20px; margin-left: 60px;">
+                <a class="nav-link"  href="{% url 'home' %}"style="color: white; font-size: 20px; margin-top: 10px; font-family: 'Kristen ITC';">  Contact Us</a>
+            </li>
+            <li class="nav-item" style="font-size: 20px; margin-left: 60px;">
+                <a class="nav-link" href="{% url 'register' %}" style="color: white; font-size: 20px;margin-top: 10px;font-family: 'Kristen ITC';">  Register</a>
+            </li>
+        </ul>
+    </nav>
+    </div>
+
+    <div style="margin-top: 100px;">
+        <h1 style=" font-style: italic; font-family: 'Curlz MT'; color: #bd2130; margin-left: 50px; margin-top: 30px; font-weight: bolder; font-size: 50px;">WEDDINGS</h1>
+        <img src="{% static 'wed/gal1.jpg' %}" class="img-thumbnail" alt="Image" style="width: 300px; height: 400px; margin-top: 20px; margin-left: 30px;">
+        <img src="{% static 'wed/gal2.jpg' %}" class="img-thumbnail" alt="Image" style="width: 300px; height: 300px; margin-top: 120px; margin-left: 30px; alignment: bottom;">
+        <img src="{% static 'wed/gal3.jpg' %}" class="img-thumbnail" alt="Image" style="width: 300px; height: 400px; margin-top: 20px; margin-left: 30px;">
+        <img src="{% static 'wed/gal4.jpg' %}" class="img-thumbnail" alt="Image" style="width: 300px; height: 400px; margin-top: 20px; margin-left: 30px;">
+        <img src="{% static 'wed/gal5.jpg' %}" class="img-thumbnail" alt="Image" style="width: 300px; height: 400px; margin-top: 40px; margin-left: 30px; alignment: inherit;">
+        <img src="{% static 'wed/gal17.jpg' %}" class="img-thumbnail" alt="Image" style="width: 300px; height: 400px; margin-top: 40px; margin-left: 30px; alignment: inherit;">
+        <img src="{% static 'wed/gal15.jpg' %}" class="img-thumbnail" alt="Image" style="width: 630px; height: 400px; margin-top: 40px; margin-left: 30px; alignment: inherit;">
+        <img src="{% static 'wed/gal9.jpg' %}" class="img-thumbnail" alt="Image" style="width: 350px; height: 400px; margin-top: 40px; margin-left: 95px; alignment: inherit;">
+        <img src="{% static 'wed/gal14.jpg' %}" class="img-thumbnail" alt="Image" style="width: 350px; height: 400px; margin-top: 40px; margin-left: 50px; alignment: inherit;">
+        <img src="{% static 'wed/gal7.jpg' %}" class="img-thumbnail" alt="Image" style="width: 350px; height: 400px; margin-top: 40px; margin-left: 50px; alignment: inherit;">
+        <img src="{% static 'wed/gal13.jpg' %}" class="rounded-circle" alt="Image" style="width: 450px; height: 400px; margin-top: 40px; margin-left: 30px; alignment: inherit;">
+        <img src="{% static 'wed/gal12.jpg' %}" class="img-thumbnail" alt="Image" style="width: 300px; height: 400px; margin-top: 40px; margin-left: 40px; alignment: inherit;">
+        <img src="{% static 'wed/gal8.jpg' %}" class="rounded-circle" alt="Image" style="width: 450px; height: 400px; margin-top: 40px; margin-left: 40px; alignment: inherit;">
+        <img src="{% static 'wed/gal6.jpg' %}" class="img-thumbnail" alt="Image" style="width: 300px; height: 400px; margin-top: 40px; margin-left: 25px; alignment: inherit;">
+        <img src="{% static 'wed/gal11.jpg' %}" class="img-thumbnail" alt="Image" style="width: 300px; height: 300px; margin-top: 40px; margin-left: 30px; alignment: inherit;">
+        <img src="{% static 'wed/gal15 (2).jpg' %}" class="img-thumbnail" alt="Image" style="width: 300px; height: 400px; margin-top: 40px; margin-left: 30px; alignment: inherit;">
+        <img src="{% static 'wed/gal18.jpg' %}" class="img-thumbnail" alt="Image" style="width: 300px; height: 300px; margin-top: 40px; margin-left: 30px; alignment: inherit;">
+    </div>
+    <div>
+        <h1 style=" font-style: italic; font-family: 'Curlz MT'; color: #bd2130; margin-left: 50px; margin-top: 100px; font-weight: bolder; font-size: 50px;">BIRTHDAYS</h1>
+        <img src="{% static 'bday/bday1.jpg' %}" class="rounded-circle" alt="Image" style="width: 400px; height: 400px; margin-top: 30px; margin-left: 30px;">
+        <img src="{% static 'bday/bday2.jpg' %}" class="img-fluid" alt="Image" style="width: 400px; height: 400px; margin-top: 30px; margin-left: 40px;">
+        <img src="{% static 'bday/bday3.jpg' %}" class="rounded-circle" alt="Image" style="width: 400px; height: 400px; margin-top: 30px; margin-left: 40px;">
+        <img src="{% static 'bday/bday4.jpg' %}" class="img-thumbnail" alt="Image" style="width: 350px; height: 400px; margin-top: 40px; margin-left:  40px;">
+        <img src="{% static 'bday/bday7.jpg' %}" class="img-thumbnail" alt="Image" style="width: 500px; height: 400px; margin-top: 40px; margin-left: 30px;">
+        <img src="{% static 'bday/bday9.jpg' %}" class="img-thumbnail" alt="Image" style="width: 350px; height: 400px; margin-top: 40px; margin-left: 30px;">
+        <img src="{% static 'bday/bday6.jpg' %}" class="img-thumbnail" alt="Image" style="width: 300px; height: 400px; margin-top: 40px; margin-left: 35px;">
+        <img src="{% static 'bday/bday5.jpg' %}" class="img-thumbnail" alt="Image" style="width: 300px; height: 400px; margin-top: 40px; margin-left: 25px;">
+        <img src="{% static 'bday/bday8.jpg' %}" class="img-thumbnail" alt="Image" style="width: 300px; height: 400px; margin-top: 40px; margin-left: 25px;">
+        <img src="{% static 'bday/bday10.jpg' %}" class="img-thumbnail" alt="Image" style="width: 300px; height: 400px; margin-top: 40px; margin-left: 25px;">
+    </div>
+
+    <div>
+        <h1 style=" font-style: italic; font-family: 'Curlz MT'; color: #bd2130; margin-left: 50px; margin-top: 100px; font-weight: bolder; font-size: 50px;">CORPORATE EVENTS</h1>
+        <img src="{% static 'corp/corp2.jpg' %}" class="img-thumbnail" alt="Image" style="width: 300px; height: 400px; margin-top: 30px; margin-left:  70px;">
+        <img src="{% static 'corp/corp3.jpg' %}" class="img-thumbnail" alt="Image" style="width: 500px; height: 400px; margin-top: 30px; margin-left:  50px;">
+        <img src="{% static 'corp/corp4.jpg' %}" class="img-thumbnail" alt="Image" style="width: 300px; height: 400px; margin-top: 30px; margin-left:  50px;">
+        <img src="{% static 'corp/corp1.jpg' %}" class="img-thumbnail" alt="Image" style="width: 300px; height: 400px; margin-top: 40px; margin-left:  25px;">
+        <img src="{% static 'corp/corp9.jpg' %}" class="img-thumbnail" alt="Image" style="width: 300px; height: 400px; margin-top: 40px; margin-left:  30px;">
+        <img src="{% static 'corp/corp10.jpg' %}" class="img-thumbnail" alt="Image" style="width: 300px; height: 400px; margin-top: 40px; margin-left:  30px;">
+        <img src="{% static 'corp/corp5.jpg' %}" class="img-thumbnail" alt="Image" style="width: 300px; height: 400px; margin-top: 40px; margin-left:  30px;">
+        <img src="{% static 'corp/corp6.jpg' %}" class="img-thumbnail" alt="Image" style="width: 450px; height: 400px; margin-top: 40px; margin-left:  15px; margin-bottom: 50px;">
+        <img src="{% static 'corp/corp7.jpg' %}" class="img-thumbnail" alt="Image" style="width: 350px; height: 400px; margin-top: 40px; margin-left:  30px; margin-bottom: 50px;">
+        <img src="{% static 'corp/corp8.jpg' %}" class="img-thumbnail" alt="Image" style="width: 450px; height: 400px; margin-top: 40px; margin-left:  30px; margin-bottom: 50px;">
+
+    </div>
+</body>
+</html>

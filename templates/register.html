@@ -1,0 +1,296 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}"/>
+    <script type="text/javascript" language="javascript" src="{% static 'js/bootstrap.min.js' %}">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+  .carousel-inner img
+  {width: 100%; height: 100%;}
+  </style>
+</head>
+<body style="background-image: url('{% static 'images/bg.png' %}');">
+    <div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" style="height: 50px">
+        <a class="navbar-brand" href="#" style="margin-left: 40px;">
+
+        </a>
+        <ul class="navbar" role="tablist">
+            <li class="nav-item" style="font-size: 20px; margin-left: 40px;">
+                <a class="nav-link " href="{% url 'home' %}"style="color: white; font-size: 30px; font-family: 'Curlz MT'">FOX EVE</a>
+            </li>
+            <li class="nav-item" style="font-size: 20px; margin-left: 150px;">
+                <a class="nav-link " href="{% url 'home' %}"style="color: white; font-size: 20px; margin-top: 10px; font-family: 'Kristen ITC';">Home</a>
+            </li>
+            <li class="nav-item" style="font-size: 20px; margin-left: 60px;">
+                <a class="nav-link" href="{% url 'gallery' %}"style="color: white; font-size: 20px; margin-top: 10px; font-family: 'Kristen ITC';">Gallery</a>
+            </li>
+            <li class="nav-item" style="font-size: 20px; margin-left: 60px;">
+                <a class="nav-link" href="{% url 'home' %}"style="color: white; font-size: 20px; margin-top: 10px; font-family: 'Kristen ITC';">Events</a>
+            </li>
+            <li class="nav-item" style="font-size: 20px; margin-left: 60px;">
+                <a class="nav-link"  href="{% url 'home' %}"style="color: white; font-size: 20px; margin-top: 10px; font-family: 'Kristen ITC';">  Contact Us</a>
+            </li>
+            <li class="nav-item" style="font-size: 20px; margin-left: 60px;">
+                <a class="nav-link" href="{% url 'register' %}" style="color: white; font-size: 20px;margin-top: 10px;font-family: 'Kristen ITC';">  Register</a>
+            </li>
+        </ul>
+    </nav>
+    </div>
+
+    <h1 STYLE="font-size: 50px; font-family: 'Curlz MT'; font-weight: bolder; color: #bd2130; margin-left: 50px; margin-top: 100px; font-family: 'Harlow Solid Italic';">REGISTRATION FORM</h1>
+    {% if success %}
+        <h1><center>Thank You! we'll contact you soon.</center></h1>
+    {% endif %}
+    <form class="was-validated" method="post" >
+        {% csrf_token %}
+    <div class="container">
+     <div class="form-group">
+      <label for="name">Full Name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter Fullname" name="name" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Fill out this field.</div>
+    </div>
+     <div class="form-group">
+      <label for="contact">Contact Number:</label>
+      <input type="tel" class="form-control" id="contact" maxlength="10" placeholder="Enter contact number" pattern="^\d{10}$" required name="contact" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Fill out this field.</div>
+    </div>
+    <div class="form-group">
+      <label for="email">E-mail:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Fill out this field.</div>
+    </div>
+    <div class="form-group">
+      <label for="date">Date:</label>
+      <input type="date" class="form-control" id="date" placeholder="Enter date" name="date" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Fill out this field.</div>
+    </div>
+    <label for="event" style="font-size: 20px;">Event:</label>
+    <td style="margin-left: 20px; width: 40px; height: 20px;">
+        <select name="event">
+            <option value="">--Event--</option>
+            <option value="wedding">Wedding</option>
+            <option value="birthday">Birthday</option>
+            <option value="corporate">Corporate Event</option>
+            <option value="theme party">Theme Party</option>
+            <option value="anniversary">Anniversary</option>
+        </select>
+    </td>
+    </div>
+    <h3 style="margin-top: 40px; margin-left: 120px;">Extra Services:</h3>
+    <div class="form-check">
+        <label class="form-check-label" for="check1" style="margin-top: 20px; margin-left: 120px;">
+            <input type="checkbox" class="form-check-input" id="check1" name="catering" value="catering" style="height: 20px; width: 20px;">CATERING
+        </label>
+    </div>
+    <div class="form-check">
+        <label class="form-check-label" for="check2" style="margin-top: 20px; margin-left: 120px;">
+            <input type="checkbox" class="form-check-input" id="check2" name="sound" value="sound" style="width: 20px; height: 20px;">SOUND SETUP
+        </label>
+    </div>
+    <h3 style="margin-top: 40px; margin-left: 120px;">Venue:</h3>
+    <div style="position: absolute;">
+        <img src="{% static 'venue/ven9.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio1">
+                <input type="radio" class="form-check-input" id="radio1" name="venue" value="umaid">Umaid Bhavan Palace
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-left: 250px;">
+        <img src="{% static 'venue/ven2.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio2">
+                <input type="radio" class="form-check-input" id="radio2" name="venue" value="welcome">ITC Welcome
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-left: 500px;">
+        <img src="{% static 'venue/ven8.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio3">
+                <input type="radio" class="form-check-input" id="radio3" name="venue" value="mehrangarh">Mehrangarh Fort
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-left: 750px;">
+     <img src="{% static 'venue/ven3.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio4">
+                <input type="radio" class="form-check-input" id="radio4" name="venue" value="vivanta">Vivanta
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-left: 1000px;">
+     <img src="{% static 'venue/ven4.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio5">
+                <input type="radio" class="form-check-input" id="radio5" name="venue" value="marriott">Marriott
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-top: 200px;">
+     <img src="{% static 'venue/ven5.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio6">
+                <input type="radio" class="form-check-input" id="radio6" name="venue" value="raddison">Raddison
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-top: 200px; margin-left: 250px;">
+     <img src="{% static 'venue/ven7.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio7">
+                <input type="radio" class="form-check-input" id="radio7" name="venue" value="marriott">Indana Palace
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-top: 200px; margin-left: 500px;">
+     <img src="{% static 'venue/ven10.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio8">
+                <input type="radio" class="form-check-input" id="radio8" name="venue" value="bijolai">Bijolai Palace
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-top: 200px; margin-left: 750px;">
+     <img src="{% static 'venue/ven1.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio9">
+                <input type="radio" class="form-check-input" id="radio9" name="venue" value="raas">RAAS
+            </label>
+        </div>
+    </div>
+    <h3 style="position: absolute; margin-left: 120px; margin-top: 450px;">Decorations:</h3>
+    <div style="position: absolute; margin-top: 500px;">
+        <img src="{% static 'deco/d1.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio1">
+                <input type="radio" class="form-check-input" id="radio1" name="dec" value="floral" >Floral Decor
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-top: 500px; margin-left: 250px;">
+        <img src="{% static 'deco/d2.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio2">
+                <input type="radio" class="form-check-input" id="radio2" name="dec" value="pink">Pink Bliss
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-top: 500px; margin-left: 500px;">
+        <img src="{% static 'deco/d3.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio3">
+                <input type="radio" class="form-check-input" id="radio3" name="dec" value="balloons">Balloons
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-top: 500px; margin-left: 750px;">
+        <img src="{% static 'deco/d4.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio4">
+                <input type="radio" class="form-check-input" id="radio4" name="dec" value="classic">Classic
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-top: 500px; margin-left: 1000px;">
+        <img src="{% static 'deco/d6.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio5">
+                <input type="radio" class="form-check-input" id="radio5" name="dec" value="hilife">Hi-Life
+            </label>
+        </div>
+    </div>
+    <h3 style="position: absolute; margin-left: 120px; margin-top: 700px;">>>Theme Based:</h3>
+    <div style="position: absolute; margin-top: 750px;">
+        <img src="{% static 'deco/t1.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio6">
+                <input type="radio" class="form-check-input" id="radio6" name="dec" value="pool">Pool Side
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-top: 750px; margin-left: 250px;">
+        <img src="{% static 'deco/t2.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio7">
+                <input type="radio" class="form-check-input" id="radio7" name="dec" value="halloween">Halloween
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-top: 750px; margin-left: 500px;">
+        <img src="{% static 'deco/t3.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio8">
+                <input type="radio" class="form-check-input" id="radio8" name="dec" value="masquerade">Masquerade
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-top: 750px; margin-left: 750px;">
+        <img src="{% static 'deco/t4.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio9">
+                <input type="radio" class="form-check-input" id="radio9" name="dec" value="extravaganza">Extravaganza
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-top: 750px; margin-left: 1000px;">
+        <img src="{% static 'deco/t5.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio10">
+                <input type="radio" class="form-check-input" id="radio10" name="dec" value="tropical">Tropical
+            </label>
+        </div>
+    </div>
+    <h3 style="position: absolute; margin-left: 120px; margin-top: 980px;">Photographers:</h3>
+        <div style="position: absolute; margin-top: 1030px;">
+        <img src="{% static 'photograph/4.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio1">
+                <input type="radio" class="form-check-input" id="radio1" name="photo" value="wizxx">WIZxx
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-top: 1030px; margin-left: 250px;">
+        <img src="{% static 'photograph/6.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio2">
+                <input type="radio" class="form-check-input" id="radio2" name="photo" value="starzone">Starzone
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-top: 1030px; margin-left: 500px;">
+        <img src="{% static 'photograph/9.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio3">
+                <input type="radio" class="form-check-input" id="radio3" name="photo" value="mediacult">Media Cult
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-top: 1030px; margin-left: 750px;">
+        <img src="{% static 'photograph/13.jpg' %}" class="img-thumbnail" alt="Image" style="width: 200px; height: 100px; margin-top: 10px; margin-left: 120px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS'; margin-top: 20px; margin-left: 120px; color: black; width: 400px;">
+            <label class="form-check-label" for="radio4">
+                <input type="radio" class="form-check-input" id="radio4" name="photo" value="shutterup">Shutter Up
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-left: 400px; margin-top: 1250px;">
+    <button type="submit" class="btn btn-dark btn-lg" style="margin-top: 30px; margin-bottom: 50px;">SUBMIT</button>
+    <button type="reset" class="btn btn-dark btn-lg" style="margin-top: 30px; margin-bottom: 50px; margin-left: 200px;">CANCEL</button>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+<h1>welcome to Admin Dashboard</h1>
+<table style="border: solid">
+        <tr style="border: solid">
+            <td style="border-bottom: solid">Id</td>
+            <td style="border-bottom: solid">Name</td>
+            <td style="border-bottom: solid">Contact</td>
+            <td style="border-bottom: solid">Email</td>
+
+            <td style="border-bottom: solid">Date</td>
+
+            <td style="border-bottom: solid">Event</td>
+
+
+            <td style="border-bottom: solid">Catering</td>
+            <td style="border-bottom: solid">Sound</td>
+            <td style="border-bottom: solid">Venue</td>
+            <td style="border-bottom: solid">Dec</td>
+            <td style="border-bottom: solid">Photo</td>
+        </tr>
+
+        {% for u in data %}
+
+        <tr>
+
+            <td style="border-right: solid">{{ u.id }}</td>
+            <td style="border-right: solid">{{ u.name }}</td>
+            <td style="border-right: solid">{{ u.contact }}</td>
+            <td style="border-right: solid">{{ u.email }}</td>
+            <td style="border-right: solid">{{ u.date }}</td>
+            <td style="border-right: solid">{{ u.event }}</td>
+            <td style="border-right: solid">{{ u.catering }}</td>
+            <td style="border-right: solid">{{ u.sound }}</td>
+            <td style="border-right: solid">{{ u.venue }}</td>
+            <td style="border-right: solid">{{ u.dec }}</td>
+            <td>{{ u.photo }}</td>
+
+
+
+
+
+        </tr>
+
+        {% endfor %}
+
+</table>
+</body>
+</html>

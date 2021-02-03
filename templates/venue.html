@@ -1,0 +1,92 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Venue</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}"/>
+    <script type="text/javascript" language="javascript" src="{% static 'js/bootstrap.min.js' %}">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-image: url('{% static 'images/bg.png' %}');">
+    <h1 style=" font-style: italic; font-family: 'Curlz MT'; color: #bd2130; margin-left: 50px; margin-top: 70px; font-weight: bolder; font-size: 60px;">VENUES</h1>
+    <div style="position: absolute;">
+        <img src="{% static 'venue/ven9.jpg' %}" class="img-thumbnail" alt="Image" style="width: 400px; height: 400px; margin-top: 30px; margin-left: 20px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS';font-size: 30px; margin-top: 20px; margin-left: 20px; color: black; background-color: beige; width: 400px;">
+            <label class="form-check-label" for="radio1">
+                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="umaid" style="width: 20px; height: 20px;" checked>UMAID BHAVAN PALACE
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-left: 420px;">
+        <img src="{% static 'venue/ven2.jpg' %}" class="img-thumbnail" alt="Image" style="width: 400px; height: 400px; margin-top: 30px; margin-left: 50px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS';font-size: 30px; margin-top: 20px; margin-left: 60px; color: black; background-color: beige; width: 400px;">
+            <label class="form-check-label" for="radio1">
+                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="itc" style="width: 20px; height: 20px;">WELCOME ITC,Jodhpur
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-left: 880px;">
+        <img src="{% static 'venue/ven8.jpg' %}" class="img-thumbnail" alt="Image" style="width: 400px; height: 400px; margin-top: 30px; margin-left: 50px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS';font-size: 30px; margin-top: 20px; margin-left: 80px; color: black; background-color: beige; width: 350px;">
+            <label class="form-check-label" for="radio1">
+                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="fort" style="width: 20px; height: 20px;">MEHRANGARH FORT
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-top: 500px;">
+        <img src="{% static 'venue/ven4.jpg' %}" class="img-thumbnail" alt="Image" style="width: 400px; height: 400px; margin-top: 30px; margin-left: 20px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS';font-size: 30px; margin-top: 20px; margin-left: 50px; color: black; background-color: beige; width: 320px;">
+            <label class="form-check-label" for="radio1">
+                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="marriott" style="width: 20px; height: 20px;" >MARRIOTT,Jodhpur
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-left: 420px; margin-top: 500px;">
+        <img src="{% static 'venue/ven5.jpg' %}" class="img-thumbnail" alt="Image" style="width: 400px; height: 400px; margin-top: 30px; margin-left: 50px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS';font-size: 30px; margin-top: 20px; margin-left: 80px; color: black; background-color: beige; width: 320px;">
+            <label class="form-check-label" for="radio1">
+                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="radisson" style="width: 20px; height: 20px;">RADISSON,Jodhpur
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-left: 880px; margin-top: 500px;">
+        <img src="{% static 'venue/ven1.jpg' %}" class="img-thumbnail" alt="Image" style="width: 400px; height: 400px; margin-top: 30px; margin-left: 50px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS';font-size: 30px; margin-top: 20px; margin-left: 80px; color: black; background-color: beige; width: 300px;">
+            <label class="form-check-label" for="radio1">
+                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="raas" style="width: 20px; height: 20px;">RAAS,Jodhpur
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-top: 1000px;">
+        <img src="{% static 'venue/ven3.jpg' %}" class="img-thumbnail" alt="Image" style="width: 400px; height: 400px; margin-top: 30px; margin-left: 20px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS';font-size: 30px; margin-top: 20px; margin-left: 50px; color: black; background-color: beige; width: 320px;">
+            <label class="form-check-label" for="radio1">
+                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="vivanta" style="width: 20px; height: 20px;">VIVANTA,Jodhpur
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-left: 420px; margin-top: 1000px;">
+        <img src="{% static 'venue/ven7.jpg' %}" class="img-thumbnail" alt="Image" style="width: 400px; height: 400px; margin-top: 30px; margin-left: 50px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS';font-size: 30px; margin-top: 20px; margin-left: 80px; color: black; background-color: beige; width: 300px;">
+            <label class="form-check-label" for="radio1">
+                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="indana" style="width: 20px; height: 20px;">INDANA PALACE
+            </label>
+        </div>
+    </div>
+    <div style="position: absolute; margin-left: 880px; margin-top: 1000px;">
+        <img src="{% static 'venue/ven10.jpg' %}" class="img-thumbnail" alt="Image" style="width: 400px; height: 400px; margin-top: 30px; margin-left: 50px;">
+        <div class="form-check" style="font-family: 'Comic Sans MS';font-size: 30px; margin-top: 20px; margin-left: 80px; color: black; background-color: beige; width: 300px;">
+            <label class="form-check-label" for="radio1">
+                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="bijolai" style="width: 20px; height: 20px;">BIJOLAI PALACE
+            </label>
+        </div>
+    </div>
+    <button type="button" class="btn btn-dark btn-lg" style="position: absolute; margin-top: 1600px; margin-bottom: 80px; margin-left: 500px;">SUBMIT</button>
+    <button type="button" class="btn btn-dark btn-lg" style="position: absolute; margin-top: 1600px; margin-bottom: 80px; margin-left: 800px;">SKIP >></button>
+
+</body>
+</html>
